@@ -1,0 +1,14 @@
+PROJECT_NAME           = "rewrite"
+PROJECT_BRIEF          = "term rewrite system"
+PROJECT_LOGO           = doc/logo.png
+HTML_OUTPUT            = docs
+OUTPUT_DIRECTORY       =
+INPUT                  = README.md doc src inc rewrite.py
+WARN_IF_UNDOCUMENTED   = NO
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+GENERATE_LATEX         = NO
+FILE_PATTERNS         += *.lex *.yacc
+EXTENSION_MAPPING      = lex=C++ yacc=C++ ino=C++
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES

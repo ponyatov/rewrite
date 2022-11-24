@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "ryuta46.multi-command",
+        "stkb.rewrap",
+        "tabnine.tabnine-vscode",
+        "ms-vscode.makefile-tools",
+        "xaver.clang-format",
+        // "usernamehw.errorlens",
+        // "ms-vscode-remote.remote-ssh",
+        // "ms-azuretools.vscode-docker",
+        // Python
+        "ms-python.python",
+        // repo local
+        // "dponyatov.rewrite"
+    ]
+}
