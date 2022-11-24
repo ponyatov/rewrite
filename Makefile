@@ -35,3 +35,29 @@ install update: doc
 	sudo apt install -yu `cat apt.txt`
 	$(PIP) install --user -U    pip autopep8 pytest
 	$(PIP) install --user -U -r requirements.txt
+
+# merge
+MERGE  = Makefile README.md .clang-format .doxygen $(S)
+MERGE += apt.txt requirements.txt
+MERGE += .vscode bin doc lib inc src tmp
+
+dev:
+	git push -v
+	git checkout $@
+	git pull -v
+	git checkout shadow -- $(MERGE)
+	$(MAKE) doxy ; git add -f docs
+
+shadow:
+	git push -v
+	git checkout $@
+	git pull -v
+
+release:
+	git tag $(NOW)-$(REL)
+	git push -v --tags
+	$(MAKE) shadow
+
+ZIP = tmp/$(MODULE)_$(NOW)_$(REL)_$(BRANCH).zip
+zip:
+	git archive --format zip --output $(ZIP) HEAD
